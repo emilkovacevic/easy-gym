@@ -73,9 +73,12 @@ type Props = {};
 
 function Classes({}: Props) {
   const screenWidth = useScreenWidth();
-  console.log(screenWidth)
+  console.log(screenWidth);
   return (
-    <section id="classes" className="w-5/6 mx-auto py-20 bg-light-middle dark:bg-dark-middle p-4">
+    <section
+      id="classes"
+      className="w-5/6 mx-auto py-20 bg-light-middle dark:bg-dark-middle p-4"
+    >
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -86,7 +89,9 @@ function Classes({}: Props) {
           visible: { opacity: 1, x: 0 },
         }}
       >
-        <h2 className="text-light-heading dark:text-dark-heading sm:text-xl my-4 text-center">OUR CLASSES</h2>
+        <h2 className="text-light-heading dark:text-dark-heading sm:text-xl my-4 text-center">
+          OUR CLASSES
+        </h2>
         <p className="my-4">
           Fringilla a sed at suspendisse ut enim volutpat. Rhoncus vel est
           tellus quam porttitor. Mauris velit euismod elementum arcu neque
@@ -97,7 +102,7 @@ function Classes({}: Props) {
 
       <ul className="my-4">
         <Swiper
-          slidesPerView={ screenWidth > 1240 ? 3 : screenWidth > 960 ? 2 : 1}
+          slidesPerView={screenWidth > 1240 ? 3 : screenWidth > 960 ? 2 : 1}
           spaceBetween={screenWidth > 600 ? 30 : 10}
           freeMode={true}
           pagination={{

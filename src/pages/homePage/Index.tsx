@@ -5,7 +5,7 @@ import Contact from "./Contact";
 import Benefits from "./Benefits";
 
 
-const HomePage = () => {
+const Index = () => {
   return (
     <main>
      <Hero />
@@ -17,4 +17,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default Index;

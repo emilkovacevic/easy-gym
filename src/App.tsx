@@ -1,9 +1,10 @@
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
-import LogIn from "./pages/homePage/Contact";
+import Register from "./pages/register/Register";
 import Footer from "./views/footer/Footer";
 import Header from "./views/header/Header";
-import HomePage from "./pages/homePage/HomePage";
+import Index from "./pages/homePage/Index";
 import Navbar from "./views/navbar/Navbar";
+import Login from "./pages/login/Login";
 
 const Layout = () => {
   return (
@@ -24,15 +25,15 @@ const Router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <HomePage /> 
+        element: <Index /> 
       },
       {
         path: "/login",
-        element: <LogIn /> 
+        element: <Login /> 
       },
       {
         path: "/register",
-        element: <LogIn /> 
+        element: <Register /> 
       },
   ],
   },

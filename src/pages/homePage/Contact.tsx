@@ -1,10 +1,11 @@
 import { useForm } from "react-hook-form";
 import { motion } from "framer-motion";
-import ContactUsPageGraphic from '../../assets/ContactUsPageGraphic.png'
-
+import ContactUsPageGraphic from "../../assets/ContactUsPageGraphic.png";
+import { useScreenWidth } from "../../hooks/useScreenWidth";
 
 const Contact = () => {
-  const inputStyles = `mb-5 w-full rounded-lg bg-primary-300
+  const width = useScreenWidth();
+  const inputStyles = `mb-5 w-full rounded-lg bg-light-middle dark:bg-dark-middle
   px-5 py-3 placeholder-gray-500`;
 
   const {
@@ -22,8 +23,7 @@ const Contact = () => {
 
   return (
     <section id="contact" className="mx-auto w-5/6 pt-24 pb-32">
-      <div
-      >
+      <div>
         {/* HEADER */}
         <motion.div
           className="md:w-3/5"
@@ -36,7 +36,12 @@ const Contact = () => {
             visible: { opacity: 1, x: 0 },
           }}
         >
-            <h2 className="text-light-heading  dark:text-dark-heading  sm:text-xl my-4"><span className="text-light-text_emphasis dark:text-dark-text_emphasis">JOIN NOW</span> TO GET IN SHAPE</h2>
+          <h2 className="text-light-heading  dark:text-dark-heading  sm:text-xl my-4">
+            <span className="text-light-text_emphasis dark:text-dark-text_emphasis">
+              JOIN NOW
+            </span>{" "}
+            TO GET IN SHAPE
+          </h2>
           <p className="my-5">
             Congue adipiscing risus commodo placerat. Tellus et in feugiat nisl
             sapien vel rhoncus. Placerat at in enim pellentesque. Nulla
@@ -60,7 +65,7 @@ const Contact = () => {
             <form
               target="_blank"
               onSubmit={onSubmit}
-              action="https://formsubmit.co/e8a5bdfa807605332f809e5656e27c6e"
+              action="https://formsubmit.co/el/fucuho"
               method="POST"
             >
               <input
@@ -100,7 +105,7 @@ const Contact = () => {
               <textarea
                 className={inputStyles}
                 placeholder="MESSAGE"
-                rows={4}
+                rows={width > 1240 ? 10 : 3}
                 cols={50}
                 {...register("message", {
                   required: true,

@@ -1,10 +1,10 @@
-import { motion } from 'framer-motion';
-import BenefitsPageGraphic from '../../assets/BenefitsPageGraphic.png'
+import { motion } from "framer-motion";
+import BenefitsPageGraphic from "../../assets/BenefitsPageGraphic.png";
 type Props = {};
 
 const Description = ({}: Props) => {
   return (
-    <section id='about' className="w-5/6 mx-auto flex flex-wrap py-20">
+    <section id="about" className="w-5/6 mx-auto flex flex-wrap py-20">
       {/* GRAPHICS AND DESCRIPTION */}
       <div className="mt-16 items-center justify-between gap-20 md:mt-28 md:flex">
         {/* GRAPHIC */}
@@ -31,7 +31,9 @@ const Description = ({}: Props) => {
               >
                 <h2 className="text-light-heading dark:text-dark-heading  sm:text-xl my-4">
                   MILLIONS OF HAPPY MEMBERS GETTING{" "}
-                  <span className="text-light-text_emphasis dark:text-dark-text_emphasis">FIT</span>
+                  <span className="text-light-text_emphasis dark:text-dark-text_emphasis">
+                    FIT
+                  </span>
                 </h2>
               </motion.div>
             </div>
@@ -51,10 +53,10 @@ const Description = ({}: Props) => {
             <p className="my-5">
               Nascetur aenean massa auctor tincidunt. Iaculis potenti amet
               egestas ultrices consectetur adipiscing ultricies enim. Pulvinar
-              fames vitae vitae quis. Quis amet vulputate tincidunt at in
-              nulla nec. Consequat sed facilisis dui sit egestas ultrices
-              tellus. Ullamcorper arcu id pretium sapien proin integer nisl.
-              Felis orci diam odio.
+              fames vitae vitae quis. Quis amet vulputate tincidunt at in nulla
+              nec. Consequat sed facilisis dui sit egestas ultrices tellus.
+              Ullamcorper arcu id pretium sapien proin integer nisl. Felis orci
+              diam odio.
             </p>
             <p className="mb-5">
               Fringilla a sed at suspendisse ut enim volutpat. Rhoncus vel est
@@ -67,9 +69,7 @@ const Description = ({}: Props) => {
           {/* BUTTON */}
           <div className="relative mt-16">
             <div className="before:absolute before:-bottom-20 before:right-40 before:z-[-1] before:content-sparkles">
-              <>
-                Join Now
-              </>
+              <>Join Now</>
             </div>
           </div>
         </div>
