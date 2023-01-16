@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import { motion } from "framer-motion";
 import ContactUsPageGraphic from "../../assets/ContactUsPageGraphic.png";
 import { useScreenWidth } from "../../hooks/useScreenWidth";
+import CallToActionBtn from "../../components/CallToAction";
 
 const Contact = () => {
   const width = useScreenWidth();
@@ -123,9 +124,10 @@ const Contact = () => {
 
               <button
                 type="submit"
-                className="mt-5 bg-gray-400 rounded-lg bg-secondary-500 px-20 py-3 transition duration-500 hover:text-white"
+                className="mt-5"
               >
-                SUBMIT
+                <CallToActionBtn text={'SUBMIT'}  />
+              
               </button>
             </form>
           </motion.div>

@@ -3,6 +3,7 @@ import Classes from "./Classes";
 import Description from "./Description";
 import Contact from "./Contact";
 import Benefits from "./Benefits";
+import Products from "./Products";
 
 
 const Index = () => {
@@ -10,6 +11,7 @@ const Index = () => {
     <main>
      <Hero />
      <Benefits />
+     <Products />
      <Description />
      <Classes />
      <Contact />

@@ -14,7 +14,7 @@ import image3 from "../../assets/image3.png";
 import image4 from "../../assets/image4.png";
 import image5 from "../../assets/image5.png";
 import image6 from "../../assets/image6.png";
-import Card from "../../components/Card";
+import Card from "./Card";
 import { motion } from "framer-motion";
 
 interface ClassType {
@@ -77,7 +77,7 @@ function Classes({}: Props) {
   return (
     <section
       id="classes"
-      className="w-5/6 mx-auto py-20 bg-light-middle dark:bg-dark-middle p-4"
+      className="w-5/6 mx-auto py-20 bg-light-middle dark:bg-dark-middle rounded-xl p-4"
     >
       <motion.div
         initial="hidden"
@@ -102,9 +102,11 @@ function Classes({}: Props) {
 
       <ul className="my-4">
         <Swiper
-          slidesPerView={screenWidth > 1240 ? 3 : screenWidth > 960 ? 2 : 1}
+        className="h-[350px]"
+          slidesPerView={screenWidth > 1240 ? 4 : screenWidth > 960 ? 3 : screenWidth > 600 ? 2 : 1}
           spaceBetween={screenWidth > 600 ? 30 : 10}
           freeMode={true}
+          loop={true}
           pagination={{
             clickable: true,
           }}

@@ -5,14 +5,17 @@ import { useTheme } from "../../hooks/useTheme";
 import { useStickyNav } from "../../hooks/useStickyNav";
 import { motion } from "framer-motion";
 import {SelectedPage} from '../../shared/types'
-
+import { BsCart2 } from "react-icons/bs";
+import ProductCart from "../../components/ProductCart";
 
 type Props = {};
 
 const Navbar = (props: Props) => {
   const { theme, handleThemeSwitch } = useTheme();
   const [mobileNavMenu, setMobileNavMenu] = useState(false);
+  const [productCartOpen, isProductCartOpen] = useState(false)
   const { isSticky } = useStickyNav();
+
   return (
     <nav
       className={`capitalize text-gray-800 justify-between p-2 relative z-10 dark:text-white font-semibold ${
@@ -26,7 +29,7 @@ const Navbar = (props: Props) => {
 
       {/* mobile layout */}
       {!mobileNavMenu && (
-        <div className="sm:hidden">
+        <div className="md:hidden">
           <button
             type="button"
             onClick={() => setMobileNavMenu((prev) => !prev)}
@@ -80,8 +83,9 @@ const Navbar = (props: Props) => {
               </HashLink>
             </li>
           ))}
+         <li><button type="button" onClick={()=>isProductCartOpen(prev => !prev)} className="mx-4 hover:text-light-nav_hover dark:hover:text-dark-nav_hover"><BsCart2 /></button></li>
           <li><button type="button" className="hover:text-light-nav_hover dark:hover:text-dark-nav_hover" onClick={handleThemeSwitch}>
-          {theme === "dark" ?  <span>🌙'</span> : <span> 🌞 </span> }
+          {theme === "dark" ?  <span>🌙</span> : <span>🌞</span> }
           </button></li>
           <li>
             <button
@@ -96,7 +100,7 @@ const Navbar = (props: Props) => {
       )}
 
       {/* desktop layout */}
-      <ul className="hidden sm:flex">
+      <ul className="hidden md:flex">
           <li className="mx-2 hover:text-light-nav_hover dark:hover:text-dark-nav_hover">
             <HashLink to={`/#${SelectedPage.Home}`}>
               {SelectedPage.Home}
@@ -125,16 +129,21 @@ const Navbar = (props: Props) => {
             </HashLink>
           </li>
         ))}
+        <li><button type="button" onClick={()=>isProductCartOpen(prev => !prev)} className="mx-4 hover:text-light-nav_hover dark:hover:text-dark-nav_hover"><BsCart2 /></button></li>
         <li className="mx-2 hover:text-light-nav_hover dark:hover:text-dark-nav_hover" >
           <button type="button" onClick={handleThemeSwitch}>
           
           
-            {theme === "dark" ?  <span>🌙'</span> : <span> 🌞 </span> }
+            {theme === "dark" ?  <span>🌙</span> : <span>🌞</span> }
 
           </button>
         </li>
       </ul>
       </div>
+      {/* Product Cart */}
+     <div className="relative">
+      {productCartOpen && <ProductCart isProductCartOpen={isProductCartOpen} />}
+     </div>
     </nav>
   );
 };

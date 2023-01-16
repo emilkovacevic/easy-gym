@@ -5,10 +5,15 @@ import Header from "./views/header/Header";
 import Index from "./pages/homePage/Index";
 import Navbar from "./views/navbar/Navbar";
 import Login from "./pages/login/Login";
+import Product from "./pages/products/Product";
+import  store  from './redux/store'
+import {Provider} from 'react-redux'
+
 
 const Layout = () => {
   return (
-    // setup global background and text colors with tailwind
+    
+    // {/* setup global background and text colors with tailwind */}
     <div className="bg-light-background dark:bg-dark-background text-light-text dark:text-dark-text">
       <Header />
       <Navbar />
@@ -28,6 +33,10 @@ const Router = createBrowserRouter([
         element: <Index /> 
       },
       {
+        path: "/products",
+        element: <Product /> 
+      },
+      {
         path: "/login",
         element: <Login /> 
       },
@@ -41,9 +50,9 @@ const Router = createBrowserRouter([
 
 const App = () => {
   return (
-    <div>
+    <Provider store={store}>
       <RouterProvider router={Router} />
-    </div>
+    </Provider>
   );
 };
 

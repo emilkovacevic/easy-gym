@@ -37,9 +37,9 @@ type Props = {};
 
 function Perks({}: Props) {
   return (
-    <section id="benefits" className="mx-auto min-h-full w-5/6 py-20">
+    <section id="about" className="mx-auto min-h-full w-5/6 py-20">
       <h2 className="text-light-heading dark:text-dark-heading sm:text-xl my-8 text-center">
-        MORE THAN JUST GYM.
+        MORE THAN A GYM.
       </h2>
       <p className="my-5 text-sm text-center">
         We provide world class fitness equipment, trainers and classes to get
