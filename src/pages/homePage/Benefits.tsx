@@ -39,7 +39,7 @@ function Perks({}: Props) {
   return (
     <section id="about" className="mx-auto min-h-full w-5/6 py-20">
       <h2 className="text-light-heading dark:text-dark-heading sm:text-xl my-8 text-center">
-        MORE THAN A GYM.
+        MORE THAN A <span className="text-light-text_emphasis dark:text-dark-text_emphasis">GYM.</span>
       </h2>
       <p className="my-5 text-sm text-center">
         We provide world class fitness equipment, trainers and classes to get

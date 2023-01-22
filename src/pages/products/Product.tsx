@@ -3,6 +3,7 @@ import axios from "../../api/axios";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/cartReducer";
 import CallToActionBtn from "../../components/CallToAction";
+import LoadingError from "../../components/LoadingError";
 
 const PRODUCTS_URL = "/api/products";
 
@@ -21,15 +22,17 @@ interface Product {
 function Product({}: Props) {
   const [products, setProducts] = useState<Product[]>([]);
   const dispatch = useDispatch();
+  const [fetchError, setFetchError] = useState(false)
 
   useEffect(() => {
     axios
       .get<Product[]>(PRODUCTS_URL)
       .then((res) => {
+        setFetchError(false)
         setProducts(res.data);
       })
       .catch((error) => {
-        console.log(error);
+        setFetchError(true)
       });
   }, []);
 
@@ -37,7 +40,8 @@ function Product({}: Props) {
     <main className="py-14 w-5/6 m-auto">
       <h1 className="text-center text-xl sm:text-2xl">Products</h1>
       <div className="flex flex-wrap">
-        {products.map((product) => (
+        {!fetchError ? 
+        products.map((product) => (
           <div
             key={product._id}
             className="bg-light-middle dark:bg-dark-middle rounded-lg overflow-hidden shadow-md m-4 mx-auto w-[300px]"
@@ -79,7 +83,9 @@ function Product({}: Props) {
               </button>
             </div>
           </div>
-        ))}
+        )):
+        <LoadingError/>
+        }
       </div>
     </main>
   );

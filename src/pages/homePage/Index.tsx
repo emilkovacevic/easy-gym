@@ -1,7 +1,7 @@
 import Hero from "./Hero";
 import Classes from "./Classes";
 import Description from "./Description";
-import Contact from "./Contact";
+import Form from "./Form";
 import Benefits from "./Benefits";
 import Products from "./Products";
 
@@ -14,7 +14,7 @@ const Index = () => {
      <Products />
      <Description />
      <Classes />
-     <Contact />
+     <Form />
     </main>
   );
 };

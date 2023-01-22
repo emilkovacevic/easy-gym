@@ -29,7 +29,7 @@ const CLASSES: Array<ClassType> = [
     id: 1,
     name: "Weight Training Classes",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "Dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     image: image1,
   },
   {
@@ -43,14 +43,14 @@ const CLASSES: Array<ClassType> = [
     id: 3,
     name: "Ab Core Classes",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "Magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     image: image3,
   },
   {
     id: 4,
     name: "Adventure Classes",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     image: image4,
   },
   {
@@ -64,7 +64,7 @@ const CLASSES: Array<ClassType> = [
     id: 6,
     name: "Training Classes",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     image: image6,
   },
 ];
@@ -90,7 +90,8 @@ function Classes({}: Props) {
         }}
       >
         <h2 className="text-light-heading dark:text-dark-heading sm:text-xl my-4 text-center">
-          OUR CLASSES
+          <span className="text-light-text_emphasis dark:text-dark-text_emphasis">OUR </span>
+          CLASSES
         </h2>
         <p className="my-4">
           Fringilla a sed at suspendisse ut enim volutpat. Rhoncus vel est

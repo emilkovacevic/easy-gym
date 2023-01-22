@@ -8,18 +8,25 @@ import Login from "./pages/login/Login";
 import Product from "./pages/products/Product";
 import  store  from './redux/store'
 import {Provider} from 'react-redux'
+import ScrollToTopButton from "./components/ScrollToTopButton";
 
 
 const Layout = () => {
   return (
-    
-    // {/* setup global background and text colors with tailwind */}
-    <div className="bg-light-background dark:bg-dark-background text-light-text dark:text-dark-text">
-      <Header />
-      <Navbar />
-      <Outlet />
+    // setup global background and text colors with tailwind 
+    <>
+    <ScrollToTopButton />
+    <div className="bg-light-background dark:bg-dark-background text-light-text dark:text-dark-text overflow-x-hidden">
+      <div className="relative flex flex-col min-h-screen justify-between">
+        <Header />
+        <Navbar />
+      <main>
+        <Outlet />
+      </main>
       <Footer />
+      </div>
     </div>
+    </>
   );
 };
 

@@ -5,46 +5,54 @@ import { useEffect } from "react";
 import { HashLink } from "react-router-hash-link";
 
 const Hero = () => {
-  const controls = useAnimation();
-  useEffect(() => {
-    controls.start({
-      y: [-50, 0, 50],
-      transition: { duration: 1 },
-    });
-  }, [controls]);
 
-  return (
-    <div id="home" className="relative  sm:top-[-85px]">
-      <div className="w-full absolute text-center dark:bg-[rgba(0,0,0,0.4)] bg-[rgba(0,0,0,0.2)] h-full flex flex-col justify-center">
-        <h1 className="text-4xl sm:text-6xl font-bold text-amber-800 drop-shadow-sm">
-          Easy Gym
+return (
+    <div className="relative md:min-h-screen h-screen w-screen text-center">
+      <img
+        className="absolute h-full w-full object-cover"
+        src={heroImage}
+        alt="background"
+      />
+      <div className="absolute flex flex-col justify-center items-center h-full w-full p-10">
+      <div className="bg-[#1f1e1e59] dark:bg-[#1f1e1ead] p-4 sm:w-4/5 w-full max-h-[70vh] grow m-auto text-white drop-shadow-lg rounded-3xl ">
+          <h2 className="text-md sm:text-xl md:text-2xl">Wellcome to</h2>
+        <h1 className="text-light-heading  dark:text-dark-heading text-2xl p-4 sm:text-3xl md:text-4xl lg:text-5xl text-center font-medium">
+            <span className="text-light-text_emphasis dark:text-dark-text_emphasis">
+            Easy{' '}
+            </span>
+            Gym
         </h1>
-        <p className="mt-8 font-bold text-xl sm:text-3xl w-5/6 mx-auto drop-shadow-lg text-amber-400">
-          Unrivaled Gym. Unparalleled Training Fitness Classes. World Class
-          Studios to get the Body Shapes That you Dream of.. Get Your Dream Body
-          Now.
+        <hr />
+
+        <p className="mt-16 sm:mt-20 lg:mt-32 text-sm sm:text-lg lg:text-2xl w-5/6 mx-auto drop-shadow-lg p-4 font-semibold tracking-widest ">
+          The easy gym, best known for: New Equipment, Best Instructors, 24h/7d working hours and Free Parking 
         </p>
+        
         <motion.div
        style={{ y: -10,}}
        animate={{ y: 10}}
        transition={{
            delay: 0.5,
-           ease: [0.075, 0.82, 0.165, 1],
-           duration: 1.5,           
+           ease: [0, 0.25, 0.75, 1],
+           duration: 1,           
            repeat: Infinity,
            repeatType: "mirror",
 
        }}
+       whileHover={{
+        y: 10,
+        scale:1.5
+      }}
         >
-
         <HashLink to="/#about" className="text-4xl flex justify-center m-12">
           <BsFillArrowDownCircleFill color="white" />
         </HashLink>
         </motion.div>
       </div>
-      <img src={heroImage} alt="cover photo"  className="min-h-[450px] object-cover" />
+      </div>
     </div>
   );
 };
+
 
 export default Hero;

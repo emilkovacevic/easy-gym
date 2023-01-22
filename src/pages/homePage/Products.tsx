@@ -29,10 +29,10 @@ function Products({}: Props) {
                 }}
               >
                 <h2 className="text-light-heading uppercase dark:text-dark-heading sm:text-xl my-4">
-                  Hiqh Quality{" "}
                   <span className="text-light-text_emphasis dark:text-dark-text_emphasis">
-                    Products
+                  Hiqh Quality{" "}
                   </span>
+                    Products
                 </h2>
               </motion.div>
             </div>

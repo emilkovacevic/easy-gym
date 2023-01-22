@@ -1,4 +1,4 @@
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 
 type Props = {
     isProductCartOpen: (prev: any) => any;
@@ -6,7 +6,7 @@ type Props = {
 
 function ProductCart({isProductCartOpen}: Props) {
 
-    const products = useSelector(state => state.cart.products)
+  // const products = useSelector(state => state.cart.products)
 
   return (
     <div className="text-gray-800 dark:text-white absolute z-30 top-0 left-3/4 dark:bg-dark-surface bg-light-middle border-blue-500 border-2 rounded-md p-4">
@@ -20,8 +20,8 @@ function ProductCart({isProductCartOpen}: Props) {
           <li>
             <img src="" alt="" />
             <div>
-              <h4>Product name {products.name}</h4>
-              <p>Amount: {products.quantity} </p>
+              {/* <h4>Product name {products.name}</h4>
+              <p>Amount: {products.quantity} </p> */}
             </div>
           </li>
         </ul>

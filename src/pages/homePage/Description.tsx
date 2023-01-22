@@ -32,9 +32,9 @@ const Description = ({}: Props) => {
                 }}
               >
                 <h2 className="text-light-heading dark:text-dark-heading  sm:text-xl my-4">
-                  MILLIONS OF HAPPY MEMBERS GETTING{" "}
+                  MILLIONS OF HAPPY MEMBERS {" "}
                   <span className="text-light-text_emphasis dark:text-dark-text_emphasis">
-                    FIT
+                  GETTING FIT
                   </span>
                 </h2>
               </motion.div>

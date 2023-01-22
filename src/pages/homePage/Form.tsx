@@ -1,26 +1,20 @@
-import { useForm } from "react-hook-form";
+import { useForm, ValidationError } from '@formspree/react';
 import { motion } from "framer-motion";
 import ContactUsPageGraphic from "../../assets/ContactUsPageGraphic.png";
 import { useScreenWidth } from "../../hooks/useScreenWidth";
 import CallToActionBtn from "../../components/CallToAction";
+import FormModal from "../../components/FormModal";
 
-const Contact = () => {
+const Form = () => {
   const width = useScreenWidth();
   const inputStyles = `mb-5 w-full rounded-lg bg-light-middle dark:bg-dark-middle
   px-5 py-3 placeholder-gray-500`;
 
-  const {
-    register,
-    trigger,
-    formState: { errors },
-  } = useForm();
+  const [state, handleSubmit] = useForm('xpznlopp');
 
-  const onSubmit = async (e: any) => {
-    const isValid = await trigger();
-    if (!isValid) {
-      e.preventDefault();
-    }
-  };
+  if (state.succeeded) {
+    return <FormModal />;
+  }
 
   return (
     <section id="contact" className="mx-auto w-5/6 pt-24 pb-32">
@@ -44,10 +38,10 @@ const Contact = () => {
             TO GET IN SHAPE
           </h2>
           <p className="my-5">
-            Congue adipiscing risus commodo placerat. Tellus et in feugiat nisl
-            sapien vel rhoncus. Placerat at in enim pellentesque. Nulla
-            adipiscing leo egestas nisi elit risus sit. Nunc cursus sagittis.
+            This is a website to showcase my work as a developer! By filling up this form, you will be sending me a message. I would love to hear your thoughts on it.
           </p>
+          <p>You can visit my official website<a className="text-light-text_emphasis dark:text-dark-text_emphasis hover:underline focus:underline" target='_blank' rel='noreferrer' href="https://emilwebsite.vercel.app/"> here.</a></p>
+          <p className='my-4'>Made by Emil</p>
         </motion.div>
 
         {/* FORM AND IMAGE */}
@@ -64,63 +58,51 @@ const Contact = () => {
             }}
           >
             <form
-              target="_blank"
-              onSubmit={onSubmit}
-              action="https://formsubmit.co/el/fucuho"
-              method="POST"
+               onSubmit={handleSubmit}
+               method="POST"
             >
+               <ValidationError
+            prefix="NAME"
+            field="NAME"
+            errors={state.errors}
+          />
+               <label htmlFor="name" className="absolute left-[9999px]">Your Name</label>
               <input
+                id='name'
                 className={inputStyles}
                 type="text"
                 placeholder="NAME"
-                {...register("name", {
-                  required: true,
-                  maxLength: 100,
-                })}
+                required
               />
-              {errors.name && (
-                <p className="mt-1 text-primary-500">
-                  {errors.name.type === "required" && "This field is required."}
-                  {errors.name.type === "maxLength" &&
-                    "Max length is 100 char."}
-                </p>
-              )}
 
+            <ValidationError 
+              prefix="Email" 
+              field="email"
+              errors={state.errors}
+            />
+             <label htmlFor="email" className="absolute left-[9999px]">Your Email</label>
               <input
                 className={inputStyles}
-                type="text"
+                id="email"
+                type="email" 
+                name="email"
                 placeholder="EMAIL"
-                {...register("email", {
-                  required: true,
-                  pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                })}
+                required
               />
-              {errors.email && (
-                <p className="mt-1 text-primary-500">
-                  {errors.email.type === "required" &&
-                    "This field is required."}
-                  {errors.email.type === "pattern" && "Invalid email address."}
-                </p>
-              )}
-
+            <ValidationError 
+                prefix="Message" 
+                field="message"
+                errors={state.errors}
+              />
+               <label htmlFor="text-area" className="absolute left-[9999px]">Add your message</label>
               <textarea
+                id='text-area'
                 className={inputStyles}
                 placeholder="MESSAGE"
                 rows={width > 1240 ? 10 : 3}
                 cols={50}
-                {...register("message", {
-                  required: true,
-                  maxLength: 2000,
-                })}
-              />
-              {errors.message && (
-                <p className="mt-1 text-primary-500">
-                  {errors.message.type === "required" &&
-                    "This field is required."}
-                  {errors.message.type === "maxLength" &&
-                    "Max length is 2000 char."}
-                </p>
-              )}
+                required
+                />
 
               <button
                 type="submit"
@@ -157,4 +139,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default Form;
