@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "../../api/axios";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/cartReducer";
-import CallToActionBtn from "../../components/CallToAction";
+import CallToActionSpan from "../../components/CallToAction";
 import LoadingError from "../../components/LoadingError";
 
 const PRODUCTS_URL = "/api/products";
@@ -79,7 +79,7 @@ function Product({}: Props) {
                   )
                 }
               >
-               <CallToActionBtn text={"Add to Cart"} />
+               <CallToActionSpan text={"Add to Cart"} />
               </button>
             </div>
           </div>

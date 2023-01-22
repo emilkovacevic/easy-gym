@@ -1,7 +1,6 @@
 import heroImage from "../../assets/hero-image.jpg";
 import { BsFillArrowDownCircleFill } from "react-icons/bs";
-import { motion, useAnimation } from "framer-motion";
-import { useEffect } from "react";
+import { motion } from "framer-motion";
 import { HashLink } from "react-router-hash-link";
 
 const Hero = () => {

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion"
-import CallToActionBtn from "../../components/CallToAction"
+import CallToActionSpan from "../../components/CallToAction"
 
 type Props = {}
 
@@ -18,17 +18,17 @@ const Register = ({}: Props) =>{
     >
       <div className="my-4 bg-light-middle dark:bg-dark-middle p-4 rounded-md">
       <h1 className="text-light-heading  dark:text-dark-heading  sm:text-xl my-4">
+            Wellcome to{' '}
             <span className="text-light-text_emphasis dark:text-dark-text_emphasis">
-            Wellcome{' '}
+            EasyGym!
             </span>
-            To Our Gym!
           </h1>
       <form className="flex flex-col">
         <label htmlFor="email">Email</label>
         <input className="dark:bg-dark  p-2 bg-slate-200 text-zinc-800" type="email" name="" id="email" />
         <label htmlFor="password">Password</label>
         <input className="dark:bg-dark-surface p-2 bg-slate-200 text-zinc-800" type="password" name="" id="" />
-        <button className='m-6' type="submit" ><CallToActionBtn text='Log In' /></button>
+        <button className='m-6' type="submit" ><CallToActionSpan text='Log In' /></button>
       </form>
       </div>
     </motion.div>

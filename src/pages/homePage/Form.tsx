@@ -2,7 +2,7 @@ import { useForm, ValidationError } from '@formspree/react';
 import { motion } from "framer-motion";
 import ContactUsPageGraphic from "../../assets/ContactUsPageGraphic.jpg";
 import { useScreenWidth } from "../../hooks/useScreenWidth";
-import CallToActionBtn from "../../components/CallToAction";
+import CallToActionSpan from "../../components/CallToAction";
 import FormModal from "../../components/FormModal";
 
 const Form = () => {
@@ -17,7 +17,7 @@ const Form = () => {
   }
 
   return (
-    <section id="contact" className="mx-auto w-5/6 pt-24 pb-32">
+    <section id="contact" className="mx-auto w-5/6 mt-32 pb-16">
       <div>
         {/* HEADER */}
         <motion.div
@@ -108,7 +108,7 @@ const Form = () => {
                 type="submit"
                 className="mt-5"
                 >
-                <CallToActionBtn text={'SUBMIT'}  />
+                <CallToActionSpan text={'SUBMIT'}  />
               
               </button>
                 </div>
@@ -126,7 +126,7 @@ const Form = () => {
               visible: { opacity: 1, y: 0 },
             }}
           >
-            <div className="w-full before:absolute before:-bottom-20 before:-right-10 before:z-[-1] md:before:content-evolvetext">
+            <div className="w-full my-1 before:absolute before:-bottom-20 before:-right-10 before:z-[-1] md:before:content-evolvetext">
               <img
                 className="w-full object-cover h-full" 
                 alt="contact-us-page-graphic"

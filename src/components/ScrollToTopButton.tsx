@@ -14,7 +14,7 @@ const ScrollToTopButton = () => {
     <>
         <div ref={scrollRef} />
         <button
-        className="bg-light-middle m-4 p-2 dark:bg-dark-middle hover:text-light-nav_hover hover:dark:text-dark-nav_hover fixed md:bottom-16 bottom-8 z-20 right-0 rounded-full"
+        className="bg-light-text_emphasis p-3 text-white dark:bg-dark-text_emphasis hover:bg-light-nav_hover hover:dark:bg-dark-nav_hover fixed md:bottom-16 bottom-8 right-5 z-20 rounded-full"
         onClick={handleClick}
         >
         <BsArrowUpCircle />

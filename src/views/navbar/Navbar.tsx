@@ -44,11 +44,10 @@ const Navbar = (props: Props) => {
 
 {mobileNavMenu && (
   <motion.div 
-    className='fixed h-screen w-3/4 bg-blue'
+    className='mx-auto'
     transition={{ duration: 0.25 }}
     initial='hidden'
     animate={mobileNavMenu ? 'visible' : 'hidden'}
-    onClick={() => setMobileNavMenu((prev) => !prev)}
   >
     <ul className="h-full w-1/3 bg-red flex items-center flex-col justify-center">
       <li className="mx-2 hover:text-light-nav_hover dark:hover:text-dark-nav_hover">
@@ -81,14 +80,14 @@ const Navbar = (props: Props) => {
       <li><button type="button" onClick={()=>isProductCartOpen(prev => !prev)} className="sm:mx-4 hover:text-light-nav_hover dark:hover:text-dark-nav_hover"><BsCart2 /></button></li>
       <li><button type="button" className="hover:text-light-nav_hover dark:hover:text-dark-nav_hover" onClick={handleThemeSwitch}>
         {theme === "dark" ? <span>🌙</span> : <span>🌞</span>}
-      </button></li>
+      </button>
+      </li>
       <li>
         <button
           type="button"
-          className="hover:text-light-nav_hover dark:hover:text-dark-nav_hover absolute top-0 right-[-25%]"
+          className="hover:text-light-nav_hover bg-blue-500 dark:hover:text-dark-nav_hover "
           onClick={() => setMobileNavMenu((prev) => !prev)}
         >
-          x
           <IoIosClose />
         </button>
       </li>

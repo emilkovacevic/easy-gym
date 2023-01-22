@@ -5,6 +5,7 @@ import Form from "./Form";
 import Benefits from "./Benefits";
 import Products from "./Products";
 import ScrollToTopButton from "../../components/ScrollToTopButton";
+import NewsletterForm from "./NewsletterForm";
 
 
 const Index = () => {
@@ -17,6 +18,7 @@ const Index = () => {
      <Description />
      <Classes />
      <Form />
+     <NewsletterForm />
     </main>
   );
 };

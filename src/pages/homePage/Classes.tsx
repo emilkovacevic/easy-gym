@@ -93,7 +93,7 @@ function Classes({}: Props) {
           <span className="text-light-text_emphasis dark:text-dark-text_emphasis">OUR </span>
           CLASSES
         </h2>
-        <p className="my-4">
+        <p className="my-4 text-center">
           Fringilla a sed at suspendisse ut enim volutpat. Rhoncus vel est
           tellus quam porttitor. Mauris velit euismod elementum arcu neque
           facilisi. Amet semper tortor facilisis metus nibh. Rhoncus sit enim
