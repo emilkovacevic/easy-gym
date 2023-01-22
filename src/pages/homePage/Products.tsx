@@ -1,22 +1,19 @@
 import { motion } from "framer-motion";
 import supplementImg from "../../assets/image7.jpg";
 import { Link } from "react-router-dom";
-import CallToAction from "../../components/CallToAction";
+import CallToActionBtn from "../../components/CallToAction";
 
 type Props = {};
 
-function Products({}: Props) {
+const Products = ({}: Props) => {
   return (
-    <section
-      id="about"
-      className="w-5/6 m-auto flex flex-wrap justify-center items-center  mx-auto py-20 bg-light-middle dark:bg-dark-middle rounded-xl p-4"
-    >
+    <section className="w-5/6 mx-auto lg:flex flex-row-reverse flex-wrap py-10 bg-light-middle dark:bg-dark-middle rounded-xl px-4">
       {/* GRAPHICS AND DESCRIPTION */}
-      <div className="sm:flex sm:flex-wrap sm:justify-between sm:items-center ">
+      <div className="mt-8 items-center justify-between gap-20 lg:mt-12 md:flex">
         {/* DESCRIPTION */}
-        <div className="mx-auto w-full sm:w-1/2 min-w-[300px]">
+        <div>
           {/* TITLE */}
-          <div className="relative ">
+          <div className="relative">
             <div className="before:absolute before:-top-20 before:-left-20 before:z-[1] before:content-abstractwaves">
               <motion.div
                 initial="hidden"
@@ -28,11 +25,11 @@ function Products({}: Props) {
                   visible: { opacity: 1, x: 0 },
                 }}
               >
-                <h2 className="text-light-heading uppercase dark:text-dark-heading sm:text-xl my-4">
+                <h2 className="text-light-heading dark:text-dark-heading  sm:text-xl my-4">
+                  MILLIONS OF HAPPY MEMBERS {" "}
                   <span className="text-light-text_emphasis dark:text-dark-text_emphasis">
-                  Hiqh Quality{" "}
+                  GETTING FIT
                   </span>
-                    Products
                 </h2>
               </motion.div>
             </div>
@@ -64,27 +61,21 @@ function Products({}: Props) {
 
           {/* BUTTON */}
           <div className="relative mt-16">
-            <div className="before:absolute text-center md:text-left before:-bottom-20 before:right-40 before:z-[-1] before:content-sparkles">
-              <Link
-                to="/products"
-                className="text-light-heading uppercase dark:text-dark-heading"
-              >
-               <CallToAction text={'Explore'}></CallToAction>
-              </Link>
+            <div className="text-center md:text-left before:absolute before:-bottom-20 before:right-40 before:z-[-1] before:content-sparkles">
+              <Link to='/register'><CallToActionBtn text={'Join Now'} /></Link>
             </div>
           </div>
         </div>
-        {/* GRAPHIC */}
-        <div className="w-full sm:w-1/2 mx-auto px-4 sm:px-0 my-4 md:my-0">
-          <img
-            className="mx-auto object-cover"
-            alt="products-page-graphic"
-            src={supplementImg}
-          />
-        </div>
+         {/* GRAPHIC */}
+         <img
+          className="mx-auto my-12 lg:my-0 min-w-[350px]"
+          alt="products-page-graphic"
+          src={supplementImg}
+        />
       </div>
     </section>
   );
-}
+};
 
 export default Products;
+

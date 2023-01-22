@@ -1,7 +1,7 @@
 import { useRef } from "react";
-type Props = {}
+import { BsArrowUpCircle } from "react-icons/bs";
 
-const ScrollToTopButton = (props: Props) => {
+const ScrollToTopButton = () => {
     const scrollRef = useRef<HTMLDivElement>(null);
 
     const handleClick = () => {
@@ -14,10 +14,10 @@ const ScrollToTopButton = (props: Props) => {
     <>
         <div ref={scrollRef} />
         <button
-        className="bg-light-nav_bg text-xs md:text-sm dark:bg-dark-nav_bg fixed md:bottom-16 bottom-8 z-20 right-0 m-4 p-4 rounded-full text-light-text_emphasis dark:text-dark-text_emphasis"
+        className="bg-light-middle m-4 p-2 dark:bg-dark-middle hover:text-light-nav_hover hover:dark:text-dark-nav_hover fixed md:bottom-16 bottom-8 z-20 right-0 rounded-full"
         onClick={handleClick}
         >
-        Scroll to Top
+        <BsArrowUpCircle />
         </button>
     </>
     );

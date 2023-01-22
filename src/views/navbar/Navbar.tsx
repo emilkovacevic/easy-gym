@@ -42,66 +42,60 @@ const Navbar = (props: Props) => {
         </div>
       )}
 
-      {mobileNavMenu && (
-        <motion.div 
-        className='border-b-2 z-20 right-0 w-full h-screen top-0'
-        transition={{ duration: 0.25 }}
-        initial='hidden'
-        whileInView='visible'
-        onClick={() => setMobileNavMenu((prev) => !prev)}
-        variants={
-          {
-            hidden: {opacity:0, x:50},
-            visible:{opacity:1, x:0},
-          }
-        }  
+{mobileNavMenu && (
+  <motion.div 
+    className='fixed h-screen w-3/4 bg-blue'
+    transition={{ duration: 0.25 }}
+    initial='hidden'
+    animate={mobileNavMenu ? 'visible' : 'hidden'}
+    onClick={() => setMobileNavMenu((prev) => !prev)}
+  >
+    <ul className="h-full w-1/3 bg-red flex items-center flex-col justify-center">
+      <li className="mx-2 hover:text-light-nav_hover dark:hover:text-dark-nav_hover">
+        <HashLink to={`/#${SelectedPage.Home}`}>
+          {SelectedPage.Home}
+        </HashLink>
+      </li>
+      <li className="mx-2 hover:text-light-nav_hover dark:hover:text-dark-nav_hover">
+        <HashLink to={`/#${SelectedPage.About}`}>
+          {SelectedPage.About}
+        </HashLink>
+      </li>
+      <li className="mx-2 hover:text-light-nav_hover dark:hover:text-dark-nav_hover">
+        <HashLink to={`/#${SelectedPage.Classes}`}>
+          {SelectedPage.Classes}
+        </HashLink>
+      </li>
+      <li className="mx-2 hover:text-light-nav_hover dark:hover:text-dark-nav_hover">
+        <HashLink to={`/#${SelectedPage.Contact}`}>
+          {SelectedPage.Contact}
+        </HashLink>
+      </li>
+      {LINKS.map((link) => (
+        <li>
+          <HashLink key={link.id} to={link.path}>
+            {link.path}
+          </HashLink>
+        </li>
+      ))}
+      <li><button type="button" onClick={()=>isProductCartOpen(prev => !prev)} className="sm:mx-4 hover:text-light-nav_hover dark:hover:text-dark-nav_hover"><BsCart2 /></button></li>
+      <li><button type="button" className="hover:text-light-nav_hover dark:hover:text-dark-nav_hover" onClick={handleThemeSwitch}>
+        {theme === "dark" ? <span>🌙</span> : <span>🌞</span>}
+      </button></li>
+      <li>
+        <button
+          type="button"
+          className="hover:text-light-nav_hover dark:hover:text-dark-nav_hover absolute top-0 right-[-25%]"
+          onClick={() => setMobileNavMenu((prev) => !prev)}
         >
-          <ul className="flex flex-col min-h-screen justify-evenly text-right">
-          
-          <li className="mx-2 hover:text-light-nav_hover dark:hover:text-dark-nav_hover">
-            <HashLink to={`/#${SelectedPage.Home}`}>
-              {SelectedPage.Home}
-            </HashLink>
-          </li>
-          <li className="mx-2 hover:text-light-nav_hover dark:hover:text-dark-nav_hover">
-            <HashLink to={`/#${SelectedPage.About}`}>
-              {SelectedPage.About}
-            </HashLink>
-          </li>
-          <li className="mx-2 hover:text-light-nav_hover dark:hover:text-dark-nav_hover">
-            <HashLink to={`/#${SelectedPage.Classes}`}>
-              {SelectedPage.Classes}
-            </HashLink>
-          </li>
-          <li className="mx-2 hover:text-light-nav_hover dark:hover:text-dark-nav_hover">
-            <HashLink to={`/#${SelectedPage.Contact}`}>
-              {SelectedPage.Contact}
-            </HashLink>
-          </li>
-          
-          {LINKS.map((link) => (
-            <li>
-              <HashLink key={link.id} to={link.path}>
-                {link.path}
-              </HashLink>
-            </li>
-          ))}
-         <li><button type="button" onClick={()=>isProductCartOpen(prev => !prev)} className="sm:mx-4 hover:text-light-nav_hover dark:hover:text-dark-nav_hover"><BsCart2 /></button></li>
-          <li><button type="button" className="hover:text-light-nav_hover dark:hover:text-dark-nav_hover" onClick={handleThemeSwitch}>
-          {theme === "dark" ? <span>🌙</span> : <span>🌞</span>}
-          </button></li>
-          <li>
-            <button
-              type="button"
-              className="hover:text-light-nav_hover dark:hover:text-dark-nav_hover absolute top-0 right-[-25%]"
-            >
-              x
-            <IoIosClose />
-            </button>
-          </li>
-          </ul>
-        </motion.div>
-      )}
+          x
+          <IoIosClose />
+        </button>
+      </li>
+    </ul>
+  </motion.div>
+)}
+
 
       {/* desktop layout */}
       <ul className="hidden md:flex">

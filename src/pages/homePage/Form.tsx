@@ -1,6 +1,6 @@
 import { useForm, ValidationError } from '@formspree/react';
 import { motion } from "framer-motion";
-import ContactUsPageGraphic from "../../assets/ContactUsPageGraphic.png";
+import ContactUsPageGraphic from "../../assets/ContactUsPageGraphic.jpg";
 import { useScreenWidth } from "../../hooks/useScreenWidth";
 import CallToActionBtn from "../../components/CallToAction";
 import FormModal from "../../components/FormModal";
@@ -103,14 +103,15 @@ const Form = () => {
                 cols={50}
                 required
                 />
-
+              <div className='text-center md:text-left'>
               <button
                 type="submit"
                 className="mt-5"
-              >
+                >
                 <CallToActionBtn text={'SUBMIT'}  />
               
               </button>
+                </div>
             </form>
           </motion.div>
 
@@ -127,7 +128,7 @@ const Form = () => {
           >
             <div className="w-full before:absolute before:-bottom-20 before:-right-10 before:z-[-1] md:before:content-evolvetext">
               <img
-                className="w-full"
+                className="w-full object-cover h-full" 
                 alt="contact-us-page-graphic"
                 src={ContactUsPageGraphic}
               />

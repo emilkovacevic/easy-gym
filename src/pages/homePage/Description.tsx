@@ -69,8 +69,8 @@ const Description = ({}: Props) => {
           </motion.div>
 
           {/* BUTTON */}
-          <div className="relative mt-16">
-            <div className="before:absolute before:-bottom-20 before:right-40 before:z-[-1] before:content-sparkles">
+          <div className="relative mt-16 ">
+            <div className="text-center md:text-left before:absolute before:-bottom-20 before:right-40 before:z-[-1] before:content-sparkles">
               <Link to='/register'><CallToActionBtn text={'Join Now'} /></Link>
             </div>
           </div>
