@@ -51,7 +51,7 @@ function Product({ }: Props) {
                 width="250"
                 height="250"
                 alt={product.name}
-                className="w-full object-contain"
+                className="w-full h-[300px] object-contain"
               />
               <div className="px-6 py-4">
                 <div className="font-medium text-lg mb-2">

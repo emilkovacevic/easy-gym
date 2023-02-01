@@ -3,7 +3,6 @@ import Register from "./pages/register/Register";
 import Footer from "./views/footer/Footer";
 import Header from "./views/header/Header";
 import Index from "./pages/homePage/Index";
-import Navbar from "./views/navbar/Navbar";
 import Login from "./pages/login/Login";
 import Product from "./pages/products/Product";
 import store from './redux/store'
@@ -18,7 +17,6 @@ const Layout = () => {
     <>
       <div className="bg-light-background dark:bg-dark-background min-h-screen text-light-text dark:text-dark-text relative flex flex-col justify-between">
           <Header />
-          <Navbar />
           <main>
             <Outlet />
           </main>
