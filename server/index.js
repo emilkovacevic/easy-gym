@@ -21,6 +21,10 @@ app.use(
   })
 );
 
+app.use('/', (req, res) => {
+  res.send('Server running');
+});
+
 app.use("/api/products", productRoute);
 
 mongoose
