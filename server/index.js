@@ -21,8 +21,8 @@ app.use(
   })
 );
 
-app.use('/', (req, res) => {
-  res.send('Server running');
+app.get("/", (req, res) => {
+  res.send("Express server running");
 });
 
 app.use("/api/products", productRoute);
