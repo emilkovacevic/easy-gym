@@ -18,10 +18,8 @@ app.use(bodyParser.json());
 app.use(
   cors({
     origin: ["http://localhost:5173", "https://easy-gym.vercel.app"],
-    credentials: true,
   })
 );
-
 
 app.use("/api/products", productRoute);
 
