@@ -11,26 +11,19 @@ const Card = ({ name, description, image }: Props) => {
   return (
     modal ?
       (
-        <article
-          onClick={() => setModal(false)}
-          style={{
-            position: 'absolute',
-            width: '100vw !impotant',
-            height: '100vh !impotant',
-            zIndex: '150',
-            background: 'red'
-          }}
-        >
-          <h3>
+        <article onClick={()=> setModal(prev=> !prev)}>
+          <img className='object-scale-down' src={image} alt={`${name} photo`} />
+          <h2>
             {name}
-          </h3>
+          </h2>
+          <p>{description}</p>
         </article>
       )
       :
       (
         <article
-          onClick={() => setModal(true)}
-          className="text-center relative rounded-2xl cursor-pointer"
+          onClick={() => setModal(prev=> !prev)}
+          className="text-center rounded-2xl cursor-pointer"
         >
           <img alt={`${image}`} src={image} className="w-[340px] h-[300px]" />
           <div className="transition-all opacity-0 hover:opacity-100 flex absolute h-[300px] flex-col justify-center align-middle p-2 text-white top-0 left-0 bg-[rgba(0,0,0,0.5)]">

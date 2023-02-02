@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import React, { useState } from 'react';
+import bowl from '../../assets/bowl.png'
 import CallToActionSpan from '../../components/CallToAction';
 
 interface Props {
@@ -16,15 +17,12 @@ const NewsletterForm: React.FC<Props> = () => {
       setError('Please enter a valid email address.');
       return;
     }
-
-    // do something with email, such as send it to a server
     setEmail('');
     setError('');
     alert('Thank you for Subscribing')
   };
 
   const isEmailValid = (email: string) => {
-    // Use a regular expression or other method to check email validity
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   };
 
@@ -37,14 +35,14 @@ const NewsletterForm: React.FC<Props> = () => {
       variants={{
         hidden: { opacity: 0, x: 50 },
         visible: { opacity: 1, x: 0 },
-      }} className="w-5/6 mx-auto flex justify-center flex-wrap mb-16 p-4 bg-light-middle dark:bg-dark-middle rounded-2xl">
+      }} className="w-5/6 mx-auto flex justify-between flex-wrap mb-16  bg-light-middle dark:bg-dark-middle rounded-2xl">
       {/* GRAPHICS AND DESCRIPTION */}
       <div className="items-center justify-between gap-20 md:flex">
         {/* GRAPHIC */}
         <img
-          className="w-full object-cover"
-          alt="Subscribe to get Email"
-          src="https://i.postimg.cc/sftgDR9b/image.jpg"
+        className='rounded-l-2xl object-fill'
+          alt="Subscribe to get our news"
+          src={bowl}
         />
 
         {/* DESCRIPTION */}

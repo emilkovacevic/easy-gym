@@ -102,7 +102,7 @@ function Classes({}: Props) {
 
       <ul className="my-4">
         <Swiper
-        className="h-[350px]"
+          className="h-[350px]"
           slidesPerView={screenWidth > 1240 ? 4 : screenWidth > 960 ? 3 : screenWidth > 600 ? 2 : 1}
           spaceBetween={screenWidth > 600 ? 30 : 10}
           freeMode={true}
